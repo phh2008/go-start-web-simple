@@ -1,0 +1,21 @@
+# 数据库配置
+db:
+  url: root:root@tcp(127.0.0.1:3306)/equipment_monitor?charset=utf8mb4&parseTime=True&loc=Local
+log:
+  level: debug
+  filename: ./log-error.log
+  maxSize: 50 #mb
+  maxBackups: 10 #保留旧日志文件数量
+  maxAge: 30 #日志保留时间（天）
+  compress: true
+  localTime: true
+cors:
+  allowedOriginPatterns:
+    - https://127.0.0.1:8081
+    - http://localhost:8088
+  allowedMethods: GET,POST,OPTIONS,PUT,DELETE
+  allowedHeaders: Content-Type, Authorization
+  exposeHeaders: Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type, New-Token, New-Expires-At
+  maxAge: 3600
+  allowCredentials: false
+
